@@ -7,8 +7,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 
-from .config import Settings, get_settings
-from .routes import router
+from config import Settings, get_settings
+from routes import router
 
 
 @asynccontextmanager
