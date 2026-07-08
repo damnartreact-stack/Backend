@@ -14,8 +14,8 @@ import numpy as np
 import pandas as pd
 from fastapi import HTTPException
 
-from .cad import UnsupportedCadFormat, read_drawing
-from .constants import BASE_WARNINGS, COLORS, DEVICE_NAMES, HAZARD_PROFILES, MODULES
+from cad import UnsupportedCadFormat, read_drawing
+from constants import BASE_WARNINGS, COLORS, DEVICE_NAMES, HAZARD_PROFILES, MODULES
 
 
 def clamp(x: float, y: float, width: int, height: int, margin: int = 12) -> tuple[int, int]:

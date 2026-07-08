@@ -10,9 +10,9 @@ from typing import Any
 
 from fastapi import APIRouter, Depends, File, Form, HTTPException, Request, UploadFile
 
-from .analysis import analyze_floor_plan
-from .config import Settings, get_settings
-from .constants import HAZARD_PROFILES, MODULES
+from analysis import analyze_floor_plan
+from config import Settings, get_settings
+from constants import HAZARD_PROFILES, MODULES
 
 try:
     from .constants import (
