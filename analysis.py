@@ -6,8 +6,6 @@ import re
 from collections import Counter, defaultdict
 from typing import Any
 from xml.sax.saxutils import escape
-from routes import router
-from analysis import analyze_drawing
 
 import cv2
 import numpy as np
