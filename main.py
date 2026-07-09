@@ -146,6 +146,22 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             "api_status": "/api/status",
             "api_analyze": f"{settings.api_prefix}/analyze",
         }
+    @app.get("/api/status", tags=["System"])
+    def api_status() -> dict[str, Any]:
+        return {
+            "status": "ok",
+            "backend": "online",
+            "service": settings.app_name,
+            "environment": settings.environment,
+            "version": "2.0.0",
+            "accepted_files": sorted(settings.allowed_extensions),
+            "max_upload_mb": settings.max_upload_mb,
+            "capabilities": {
+                "ceasefire_bom_mapping": True,
+                "updated_dxf_export": True,
+                "export_package_zip": True,
+            },
+        }
 
     app.include_router(router)
 
